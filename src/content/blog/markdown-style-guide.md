@@ -215,18 +215,18 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
 ### math
 
-you can use normal $ \LaTeX $ command for styling equaitons 
+you can use normal 
+$$ 
+\LaTeX 
+$$ 
+command for styling equaitons 
 
 you can do this by
 ```tex
-// mutli line
 Quadratic Formula:
 $$
 x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
 $$
-
-// or inline
-Quadratic Formula : $ x=\frac{-b\pm \sqrt{b^2-4ac}}{2a} $ some other text.
 
 ```
 which gives the output:
@@ -235,5 +235,3 @@ Quadratic Formula:
 $$
 x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
 $$
-
-Quadratic Formula : $ x=\frac{-b\pm \sqrt{b^2-4ac}}{2a} $ some other text.
