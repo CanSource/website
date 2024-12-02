@@ -6,7 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://CanSource.github.io',
-	base: 'website',
+	site: 'https://cansource.org',
 	integrations: [mdx(), sitemap()],
 });
