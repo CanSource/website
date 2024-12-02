@@ -212,3 +212,28 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+### math
+
+you can use normal $ \LaTeX $ command for styling equaitons 
+
+you can do this by
+```tex
+// mutli line
+Quadratic Formula:
+$$
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+$$
+
+// or inline
+Quadratic Formula : $ x=\frac{-b\pm \sqrt{b^2-4ac}}{2a} $ some other text.
+
+```
+which gives the output:
+
+Quadratic Formula:
+$$
+x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+$$
+
+Quadratic Formula : $ x=\frac{-b\pm \sqrt{b^2-4ac}}{2a} $ some other text.
