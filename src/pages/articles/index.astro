@@ -67,6 +67,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
+				transform: translate(0, -0.5em);
 			}
 			@media (max-width: 720px) {
 				ul {
