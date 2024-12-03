@@ -102,7 +102,7 @@ const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.p
 						<h1>{title}</h1>
 
 						<p class="by">{authors.length > 1 ? "authors:" : "author:"}</p>
-						<ul style="text-align: left;">
+						<ul class="author-names">
 						{authors.map((name : string) => (
 								<li>{name}</li>		
 							))
@@ -125,6 +125,16 @@ const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.p
 	text-align: left;
 	margin-bottom: 0.5em;
 	padding-bottom: 0px;
+}
+
+
+.author-names {
+	text-align: left;
+
+}
+
+.author-names li{
+	color: var(--text-color);
 }
 
 
