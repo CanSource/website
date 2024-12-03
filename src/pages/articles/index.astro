@@ -54,21 +54,32 @@ const posts = (await getCollection('blog')).sort(
 			}
 			.title {
 				margin: 0;
-				color: rgb(var(--black));
+				color: hsl(from var(--accent) h s calc(l * 0.6));
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: hsl(from var(--blue) h s calc(l * 0.5));
 			}
-			ul li a:hover h4,
+			ul li a:hover h4 {
+				/* color: var(--accent); */
+				color: hsl(from var(--accent) h s calc(l * 1.2));
+			}
+			
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: var(--blue);
 			}
+
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
 				transform: translate(0, -0.5em);
 			}
+
+			ul a:checked img {
+				transform: translate(0, +0.5em);
+			}
+
+
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
