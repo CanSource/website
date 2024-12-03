@@ -7,7 +7,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.props;
+
+
+
+
+
 ---
 
 <html lang="en">
@@ -95,6 +100,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
+
+						<p class="by">{authors.length > 1 ? "authors:" : "author:"}</p>
+						<ul style="text-align: left;">
+						{authors.map((name : string) => (
+								<li>{name}</li>		
+							))
+						}</ul>
+
 						<hr />
 					</div>
 					<slot />
@@ -104,3 +117,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Footer />
 	</body>
 </html>
+
+<style>
+
+
+.by {
+	text-align: left;
+	margin-bottom: 0.5em;
+	padding-bottom: 0px;
+}
+
+
+</style>
