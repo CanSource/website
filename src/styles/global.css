@@ -6,7 +6,6 @@
 
 :root {
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
@@ -21,6 +20,7 @@
 	--link-color-light-theme: var(--blue-light-theme);
 	--background-light-theme: #f2f8ff;
 	--header-light-theme: #ffffff;
+	--gray-light-theme: rgb(34, 41, 57);
 
 	--yellow-dark-theme: #f5c300;
 	--pink-dark-theme: #a4036f;
@@ -31,6 +31,7 @@
 	--link-color-dark-theme: var(--blue-dark-theme);
 	--background-dark-theme: #202020;
 	--header-dark-theme: #151515;
+	--gray-dark-theme: rgb(229, 233, 240);
 	
 	--yellow : var(--yellow-light-theme);
 	--pink : var(--pink-light-theme);
@@ -44,6 +45,8 @@
 	
 	--accent: var(--yellow);
 	--accent-dark: var(--blue);
+	--gray: var(--gray-light-theme);
+
 
 	--box-shadow: 0 2px 6px rgba(var(--black), 25%), 0 8px 24px rgba(var(--black), 33%),
 		0 16px 32px rgba(var(--black), 33%);
@@ -62,7 +65,8 @@
 		--link-color: var(--link-color-dark-theme);
 		--background-colour : var(--background-dark-theme);
 		--header-color: var(--header-dark-theme);
-}
+		--gray: var(--gray-dark-theme);
+	}
 		
 }
 
@@ -202,7 +206,7 @@ blockquote {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid var(--gray);
 }
 @media (max-width: 720px) {
 	body {
