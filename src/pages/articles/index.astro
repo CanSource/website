@@ -54,20 +54,32 @@ const posts = (await getCollection('blog')).sort(
 			}
 			.title {
 				margin: 0;
-				color: rgb(var(--black));
+				color: hsl(from var(--accent) h s calc(l * 0.5));
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: rgb(var(--gray));
+				color: hsl(from var(--blue) h s calc(l * 0.5));
 			}
-			ul li a:hover h4,
+			ul li a:hover h4 {
+				/* color: var(--accent); */
+				color: hsl(from var(--accent) h s calc(l * 1.2));
+			}
+			
 			ul li a:hover .date {
-				color: rgb(var(--accent));
+				color: hsl(from var(--blue) h s calc(l * 1.2));
 			}
+
 			ul a:hover img {
 				box-shadow: var(--box-shadow);
+				transform: translate(0, -0.5em);
 			}
+
+			ul a:checked img {
+				transform: translate(0, +0.5em);
+			}
+
+
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
@@ -93,7 +105,7 @@ const posts = (await getCollection('blog')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/articles/${post.slug}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">

@@ -2,7 +2,11 @@
 title: 'Markdown Style Guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 pubDate: 'Jun 19 2024'
+updatedDate: 'Dec 3 2024'
 heroImage: '/blog-placeholder-1.jpg'
+authors: 
+- astro
+- sirlilpanda
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -137,6 +141,8 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 1. First item
 2. Second item
 3. Third item
+4. fourth item
+5. fifth item
 ```
 
 #### Output
@@ -144,7 +150,8 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 1. First item
 2. Second item
 3. Third item
-
+4. fourth item
+5. fifth item
 ### Unordered List
 
 #### Syntax
