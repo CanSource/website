@@ -6,7 +6,7 @@ import Icon from './icon.astro';
 
 <header>
 	<nav>
-		<a class="icon-spot" href="">
+		<a class="icon-spot" href="/">
 			<Icon width={64} height={64} />
 			<h2 class="site-title">{SITE_TITLE}</h2>
 		</a>
@@ -34,13 +34,24 @@ import Icon from './icon.astro';
 		padding-top: 0.25em;
 		padding-bottom: 0.25em;
 		max-height: 64px;
-		fill: var(--black);
-		color: var(--black);
+		fill: var(--text-color);
+		color: var(--text-color);
 		display: flex;
 		align-items: center;
 		width: 180px;
 		transition: 250ms;
 	}
+	.icon-spot h2 {
+		color: var(--text-color);
+		transition: 250ms;	
+	}
+	.icon-spot:hover {
+		fill: var(--accent);
+	}
+	.icon-spot:hover h2 {
+		color: var(--accent);
+	}
+
 	.social-links {
 		width: 180px;
 	}
@@ -49,7 +60,7 @@ import Icon from './icon.astro';
 	}
 
 	.social-links a {
-		fill: var(--black);
+		fill: var(--text-color);
 		transition: 250ms;
 	}
 
@@ -58,29 +69,19 @@ import Icon from './icon.astro';
 	}
 
 	.header-link {
-		color: var(--black);
-		transition: 250ms;	
+		color: var(--text-color);
+		transition: 250ms;
 	}
-
 	.header-link:hover {
 		color: var(--accent);
 		transition: 250ms;	
 	}
 
-
-	.icon-spot:hover {
-		fill: var(--accent);
-	}
-	.icon-spot:hover h2 {
-		color: var(--accent);
-	}
-
-
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: var(--header-color);
+		box-shadow: 0 2px 8px rgba(var(--text-color), 5%);
 	}
 	h2 {
 		margin: 0;
@@ -98,7 +99,7 @@ import Icon from './icon.astro';
 	}
 	nav a {
 		padding: 0.5em 0.5em;
-		color: var(--black);
+		color: var(--text-color);
 		border-top: 3px solid transparent;
 		border-bottom: 3px solid transparent;
 		text-decoration: none;
