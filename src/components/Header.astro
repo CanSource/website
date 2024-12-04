@@ -109,6 +109,17 @@ import Icon from './icon.astro';
 		border-bottom-color: var(--accent);
 	}
 	@media (max-width: 720px) {
+
+		/* Remove CanSource text from logo on mobile */
+		.icon-spot {
+			width: auto;
+		}
+		.icon-spot h2 {
+			width: 0;
+			display: none;
+		}
+
+		/* Remove social media tags on mobile */
 		.social-links {
 			width: 0;
 			margin-right: 10px;
