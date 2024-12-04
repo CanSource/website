@@ -5,16 +5,71 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+
+
+	--yellow-light-theme: #604c09;
+	--pink-light-theme: #41082c;
+	--blue-light-theme: #0b353f;
+	--green-light-theme: #14533B;
+	--text-color-light-theme: #101010;
+	--title-color-light-theme: var(--yellow-light-theme);
+	--link-color-light-theme: var(--blue-light-theme);
+	--background-light-theme: #f2f8ff;
+	--header-light-theme: #ffffff;
+	--gray-light-theme: rgb(34, 41, 57);
+
+	--yellow-dark-theme: #f5c300;
+	--pink-dark-theme: #a4036f;
+	--blue-dark-theme: #048ba8;
+	--green-dark-theme: #16DB93;
+	--text-color-dark-theme: #fff7d8;
+	--title-color-dark-theme: var(--yellow-dark-theme);
+	--link-color-dark-theme: var(--blue-dark-theme);
+	--background-dark-theme: #202020;
+	--header-dark-theme: #151515;
+	--gray-dark-theme: rgb(229, 233, 240);
+	
+	--yellow : var(--yellow-light-theme);
+	--pink : var(--pink-light-theme);
+	--blue : var(--blue-light-theme);
+	--green : var(--green-light-theme);
+	--text-color: var(--text-color-light-theme);
+	--title-color: var(--title-color-light-theme);
+	--link-color: var(--link-color-light-theme);
+	--background-colour : var(--background-light-theme);
+	--header-color: var(--header-light-theme);
+	
+	--accent: var(--yellow);
+	--accent-dark: var(--blue);
+	--gray: var(--gray-light-theme);
+
+
+	--box-shadow: 0 2px 6px rgba(var(--black), 25%), 0 8px 24px rgba(var(--black), 33%),
+		0 16px 32px rgba(var(--black), 33%);
 }
+
+
+@media (prefers-color-scheme: dark) {
+	/* defaults to dark theme */
+	:root {
+		--yellow : var(--yellow-dark-theme);
+		--pink : var(--pink-dark-theme);
+		--blue : var(--blue-dark-theme);
+		--green : var(--green-dark-theme);
+		--text-color: var(--text-color-dark-theme);
+		--title-color: var(--title-color-dark-theme);
+		--link-color: var(--link-color-dark-theme);
+		--background-colour : var(--background-dark-theme);
+		--header-color: var(--header-dark-theme);
+		--gray: var(--gray-dark-theme);
+	}
+		
+}
+
 @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
@@ -34,11 +89,11 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	background: var(--background-colour);
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: var(--text-color);
 	font-size: 20px;
 	line-height: 1.7;
 }
@@ -55,33 +110,59 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
+	color: var(--accent);
 	line-height: 1.2;
 }
+
 h1 {
 	font-size: 3.052em;
+	color: hsl(from var(--accent) h s l);
 }
 h2 {
 	font-size: 2.441em;
+	color: hsl(from var(--accent) h s calc(l * 0.9));
 }
 h3 {
 	font-size: 1.953em;
+	color: hsl(from var(--accent) h s calc(l * 0.8));
 }
 h4 {
 	font-size: 1.563em;
+	color: hsl(from var(--accent) h s calc(l * 0.7));
 }
 h5 {
 	font-size: 1.25em;
+	color: hsl(from var(--accent) h s calc(l * 0.6));
 }
+h6 {
+	color: hsl(from var(--accent) h s calc(l * 0.5));
+}
+
+
+.prose ol li:nth-child(even)::marker,
+.prose ul li:nth-child(even)::marker {
+	color: var(--blue);
+}
+
+.prose ol li:nth-child(odd)::marker,
+.prose ul li:nth-child(odd)::marker {
+	color: var(--green);
+}
+
+.prose ol li:nth-child(5n)::marker,
+.prose ul li:nth-child(5n)::marker {
+	color: var(--yellow);
+}
+
 strong,
 b {
 	font-weight: 700;
 }
 a {
-	color: var(--accent);
+	color: var(--link-color);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 p {
 	margin-bottom: 1em;
@@ -106,8 +187,9 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	color: rgb(var(--gray-light));
+	background-color: rgb(var(--gray-dark));
+	border-radius: 4px;
 }
 pre {
 	padding: 1.5em;
@@ -124,7 +206,7 @@ blockquote {
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px solid var(--gray);
 }
 @media (max-width: 720px) {
 	body {
