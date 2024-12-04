@@ -7,8 +7,8 @@ import Icon from './icon.astro';
 <header>
 	<nav>
 		<a class="icon-spot" href="/">
-			<Icon width={64} height={64} />
-			<h2 class="site-title">{SITE_TITLE}</h2>
+			<Icon height={32} width={110} />
+			<span></span>
 		</a>
 		<div class="internal-links">
 			<HeaderLink href="/"><p class="header-link">Home</p></HeaderLink>
@@ -31,25 +31,12 @@ import Icon from './icon.astro';
 /* https://github.com/CanSource */
 
 	.icon-spot {
-		padding-top: 0.25em;
-		padding-bottom: 0.25em;
 		max-height: 64px;
 		fill: var(--text-color);
 		color: var(--text-color);
 		display: flex;
 		align-items: center;
-		width: 180px;
 		transition: 250ms;
-	}
-	.icon-spot h2 {
-		color: var(--text-color);
-		transition: 250ms;	
-	}
-	.icon-spot:hover {
-		fill: var(--accent);
-	}
-	.icon-spot:hover h2 {
-		color: var(--accent);
 	}
 
 	.social-links {
