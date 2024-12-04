@@ -135,6 +135,7 @@ h5 {
 	color: hsl(from var(--accent) h s calc(l * 0.6));
 }
 h6 {
+	font-size: 1.00em;
 	color: hsl(from var(--accent) h s calc(l * 0.5));
 }
 
