@@ -83,12 +83,12 @@ const posts = (await getCollection('blog')).sort(
 			.input-field {
 				width: 100%;
 				height: 3em;
-				background-color: var(--background-color);
+				background-color: var(--header-color);
+				box-shadow: var(--box-shadow-lighter);
 				box-sizing: border-box;
 				border: none;
 				border-bottom: 2px solid var(--accent);
 				border-radius: 4px;
-				box-shadow: var(--box-shadow);
 				color: var(--text-color);
 				transition: 250ms;
 				padding-left: 2em;
@@ -105,7 +105,7 @@ const posts = (await getCollection('blog')).sort(
 				margin-left: 50%;
 			}
 
-			.clear-button{
+			.clear-button {
 				position: absolute;
 				color: var(--accent);
 				height: 2em;
@@ -113,7 +113,7 @@ const posts = (await getCollection('blog')).sort(
 				top: 5%;
 				transform: translate(-2.2em, 0);
 				backdrop-filter: blur(2px);
-				background-color: var(--background-color);
+				background-color: var(--header-color);
 				font-size: 1em;
 				border: unset;
 				cursor: pointer;
