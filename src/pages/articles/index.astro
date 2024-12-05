@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import ArticleSearchBar from '../../components/ArticleSearchBar.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -15,7 +16,7 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
+		<style is:inline>
 			main {
 				width: 960px;
 			}
@@ -79,7 +80,54 @@ const posts = (await getCollection('blog')).sort(
 				transform: translate(0, +0.5em);
 			}
 
+			.input-field {
+				width: 100%;
+				height: 3em;
+				background-color: var(--header-color);
+				box-shadow: var(--box-shadow-lighter);
+				box-sizing: border-box;
+				border: none;
+				border-bottom: 2px solid var(--accent);
+				border-radius: 4px;
+				color: var(--text-color);
+				transition: 250ms;
+				padding-left: 2em;
+			}
 
+			.input-field:focus {
+				border: 2px solid var(--accent);
+				outline: none;
+				height: 3em;
+				font-size: 1.3em;
+			}
+
+			.input-field::placeholder {
+				margin-left: 50%;
+			}
+
+			.clear-button {
+				position: absolute;
+				color: var(--accent);
+				height: 2em;
+				width: 2em;
+				top: 5%;
+				transform: translate(-2.2em, 0);
+				backdrop-filter: blur(2px);
+				background-color: var(--header-color);
+				font-size: 1em;
+				border: unset;
+				cursor: pointer;
+			}
+
+			.search-bar {
+				position: relative;
+				padding-bottom: 2em;
+			}
+
+			.search-info {
+
+			}
+			
 			@media (max-width: 720px) {
 				ul {
 					gap: 0.5em;
@@ -101,21 +149,7 @@ const posts = (await getCollection('blog')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/articles/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
+				<ArticleSearchBar />
 			</section>
 		</main>
 		<Footer />

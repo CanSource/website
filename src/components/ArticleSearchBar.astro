@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import Search from './Search.jsx';
+// const allPosts = await Astro.glob('../content/blog/*.{md,mdx}');
+// const posts = allPosts.filter((post) => post);
+const all_posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+
+
+<Search client:load searchList={all_posts} />
