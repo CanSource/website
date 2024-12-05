@@ -55,7 +55,7 @@
 }
 
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
 	/* defaults to dark theme */
 	:root {
 		--yellow : var(--yellow-dark-theme);
