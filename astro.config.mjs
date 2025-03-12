@@ -9,11 +9,24 @@ import rehypeCitation from 'rehype-citation';
 
 import react from '@astrojs/react';
 
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://cansource.org',
-    integrations: [mdx({
-        remarkPlugins: [remarkMath], // relevant
-        rehypePlugins: [rehypeKatex, rehypeCitation] // relevant
-		}), sitemap(), react()],
+    markdown: {
+        rehypePlugins: [
+            [rehypeCitation, {
+                bibliography: "public/references.bib",
+                linkCitations: true
+            }]
+        ]
+    },
+    integrations: [
+        mdx({
+            remarkPlugins: [remarkMath], // relevant
+            rehypePlugins: [rehypeKatex] // relevant
+        }), 
+        sitemap(), 
+        react()
+    ],
 });
