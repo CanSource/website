@@ -17,6 +17,7 @@ export default defineConfig({
         rehypePlugins: [
             [rehypeCitation, {
                 bibliography: "public/references.bib",
+                csl: "src/styles/ieee.csl",
                 linkCitations: true
             }]
         ]
