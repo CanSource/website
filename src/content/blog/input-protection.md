@@ -24,6 +24,13 @@ If you are already familiar with protection circuity you may wish to jump direct
 
 <h3 id="motivating-example">An Example</h3>
 
+Consider this relatively simple circuit. 
+
+... Insert figure ...
+
+This circuit has a single connector that has a 5 V input, an analogue input, a digital output, and
+0 V connection (ground). All the connections go directly to a microcontroller.
+
 
 <h3 id="designing-protection">Desiging Protection</h3>
 
