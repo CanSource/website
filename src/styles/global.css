@@ -249,3 +249,21 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+/* Citation styling */
+
+#refs::before {
+	content: "References";
+	font-size: 2.441em;
+	font-weight: bold;
+	color: var(--accent);
+	margin: 0 0 0.5rem 0;
+	line-height: 1.2;
+}
+
+/* Correct formatting of [#] identifer in IEEE style citations */
+.csl-left-margin {
+	float: left;
+	margin-right: 8px;
+}
