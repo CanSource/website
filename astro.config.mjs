@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import rehypeKatex from 'rehype-katex'; // relevant
 import remarkMath from 'remark-math';   // relevant
+import rehypeCitation from 'rehype-citation';
 
 import react from '@astrojs/react';
 
@@ -13,6 +14,6 @@ export default defineConfig({
     site: 'https://cansource.org',
     integrations: [mdx({
         remarkPlugins: [remarkMath], // relevant
-        rehypePlugins: [rehypeKatex] // relevant
+        rehypePlugins: [rehypeKatex, rehypeCitation] // relevant
 		}), sitemap(), react()],
 });
