@@ -7,6 +7,7 @@ heroImage: '/blog-placeholder-1.jpg'
 authors: 
 - astro
 - sirlilpanda
+- Jordan Hay
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -191,6 +192,24 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 - Dairy
   - Milk
   - Cheese
+
+## References
+
+References are defined in `public/references.bib` in BibLaTeX format and take on the IEEE format
+when used.
+
+### Syntax
+
+```markdown
+[@‎example_reference]
+```
+
+### Output
+
+[@example_reference]
+
+(See bottom of article for the generated references list.)
+
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
