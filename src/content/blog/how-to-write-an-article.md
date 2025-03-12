@@ -15,18 +15,71 @@ publishment.
 
 The steps for publishing an article are as follows:
 
- 1. Branch or fork the website repository.
- 2. Write your article.
+ 1. [Branch or fork the website repository.](#starting-a-branch)
+    * Where to put your files.
+ 2. [Write your article.](#writing-an-article)
     * Syntax and previewing.
     * Add figures, tables, and references.
     * Meet the writing standards.
     * Add your author profile.
- 3. Submit for review.
+ 3. [Submit for review.](#review-process)
     * The reviewers.
     * Making amendments.
- 4. Publish!
+ 4. [Publish!](#publishing)
     * Making amendments (after release).
     * Removing articles.
 
 The following sections elaborate on each of these steps.
 
+
+<h3 id="starting-a-branch">Starting a Branch</h3>
+
+<h4>Where to put your files</h4>
+
+
+<h3 id="writing-an-article">Writing an Article</h3>
+
+<h4>Syntax</h4>
+
+<h5>Figures</h5>
+<h5>Tables</h5>
+<h5>References</h5>
+
+<h4>Writing Standards</h4>
+
+<h4>Previewing your Articles</h4>
+
+<h4>Your Author Profile</h4>
+
+This is still under development, sorry! For now, just make sure that your name is included as apart
+of the authors section in the header of your article.
+
+
+<h3 id="review-process">The Review Process</h3>
+
+<h4>Amendements</h4>
+
+
+<h3 id="publishing">Publishing</h3>
+
+Once an article has passed review with all necessary amendments made, it's fit for publishing! 
+Congratulations! As soon as it can be published, it will be freely and publicly available on the
+CanSource website.
+
+We understand that sometimes things are published with errors and we provide mechanisms for
+correcting these. The following sub-sections address the processes for amending and removing
+published articles.
+
+<h4>Amendements</h4>
+
+<h4>Removal</h4>
+
+Articles can be removed from the CanSource website on request from the author or maintainers.
+Removal will happen as soon as is feasible, and the maintainers are responsible to make sure the
+removal is timely (e.g. within a week of the request). This may not be possible in extreme cases.
+To request a removal please use the issue tracker on the website repository.
+
+It is worth noting that while the article will be removed from the published website, it may still
+exist in the version history of the website published on the (publicly accessible) git repository.
+As always, it is advisable to be certain of what you publish online before you publish it so that
+removals are not necessary except in rare circumstances.
