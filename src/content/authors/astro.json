@@ -1,0 +1,12 @@
+{
+    "$schema": "../../schemas/author.json",
+    "name": "astro",
+    "blurb": "this was written by someone at astro",
+    "icon": "/astro-logo-icon.svg",
+    "social_links": [
+        {
+            "icon" : "/website.svg",
+            "link" : "https://astro.build/"
+        }
+    ]
+}

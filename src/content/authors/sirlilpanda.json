@@ -1,0 +1,36 @@
+{
+    "$schema": "../../schemas/author.json",
+    "name": "sirlilpanda",
+    "blurb": "computer engineer that does way to much, computer engineer that does way to much, computer engineer that does way to much, computer engineer that does way to much, i repeat these to make sure the text overflow is still working on the author cards",
+    "icon": "https://avatars.githubusercontent.com/u/33928689?v=4",
+    "pronous": "the badest bitch in town",
+    "extra_titles": [
+        "leadership"
+    ],
+    "social_links": [
+        {
+            "icon" : "/github-mark.svg",
+            "link" : "https://github.com/sirlilpanda"
+        },
+        {
+            "icon" : "/github-mark.svg",
+            "link" : "https://github.com/sirlilpanda"
+        },
+        {
+            "icon" : "/github-mark.svg",
+            "link" : "https://github.com/sirlilpanda"
+        },
+        {
+            "icon" : "/github-mark.svg",
+            "link" : "https://github.com/sirlilpanda"
+        },
+        {
+            "icon" : "/github-mark.svg",
+            "link" : "https://github.com/sirlilpanda"
+        },
+        {
+            "icon" : "/website.svg",
+            "link" : "https://sirlilpanda.studio"
+        }
+    ]
+}
