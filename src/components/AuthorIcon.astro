@@ -1,0 +1,190 @@
+---
+import SocialLink from './SocialLink.astro' 
+
+type SocialLinkType = {
+    icon: string | undefined,
+    link: string | undefined,
+}
+
+interface Props {
+    name: string,
+	icon: string | undefined,
+    blurb : string | undefined,
+    pronous : string | undefined,
+    social_links: SocialLinkType[] | undefined, 
+    extra_titles: String[] | undefined,
+}
+
+const { icon, name, blurb, social_links, pronous, extra_titles } = Astro.props;
+---
+<div class="author">
+    <div class="wrapper">
+        <h6>{name}</h6>
+        <img src={icon} alt="">
+        <div class=""></div>
+    </div>
+    <div class="tooltip">
+        <div class="tooltip-inner">
+            <div class="arrow-wrapper"><div class="arrow"/></div>
+            <div class="tooltip-header">
+                <div class="name-info">
+                    <h1>{name}</h1>
+                    <p>{pronous}</p>
+                    {extra_titles?.map((t) => <p>{t}</p>)}
+                </div>
+                <img src={icon} alt="">
+            </div>
+            <div class=""></div>
+            <p>{blurb}</p>
+            <div class="social_links">
+                {social_links?.map((link) => <SocialLink
+                    icon={link.icon}
+                    link={link.link}
+                />
+                ) }
+            </div>
+        </div>
+    </div >
+</div>
+
+<style>
+
+.social_links {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 0.5em;
+    padding-top: unset;
+}
+
+.arrow-wrapper {
+    transform: translateX(10%);
+}
+
+.arrow {
+    position: absolute;
+    width: 0;
+	height: 0;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-bottom: 20px solid var(--header-color);
+    z-index: unset;
+    transform: translateY(-100%);
+}
+
+.wrapper {
+    all: unset;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 2em;
+    background-color: var(--header-color);
+    display: flex;
+    transition: 250ms;
+    margin: 0.25em;
+    box-shadow: var(--box-shadow-lighter);
+}
+
+.tooltip {
+    background-color: var(--header-color);
+    /* color: white; */
+    padding: 5px 10px;
+    border-radius: 2em;
+    font-size: 13px;
+    position: absolute;
+    z-index: 2;
+    opacity: 0%;
+    transform: translate(0, 2em);
+    display: none;
+    transition: 250ms;
+    max-width: fit-content;
+}
+
+.tooltip:hover {
+    box-shadow: var(--box-shadow-lighter);
+    opacity: 100%;
+    transform: translate(0, +0.5em);
+    display: inherit;
+}
+
+.wrapper:hover + .tooltip {
+  /* visibility: visible; */
+  transform: translate(0, +0.5em);
+  opacity: 100%;
+  box-shadow: var(--box-shadow-lighter);
+  display: inherit;
+}
+
+.tooltip-inner {
+}
+
+.tooltip-inner > p {
+    text-align: left;
+    color: var(--text-color);
+    max-width: 400px;
+    position: relative;
+    bottom: 0;
+}
+
+.tooltip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tooltip-header > .name-info {
+    text-align: left;    
+    float: left;
+}
+
+.name-info > h1 {
+    margin: unset;
+    max-width: 400px;
+    padding-right: 1em;
+    float: left;
+}
+
+.name-info > p {
+    padding: unset;
+    margin: unset;
+    font-style: italic;
+    color: var( --gray );
+}
+
+.tooltip-header > img {
+    float: right;
+    border-radius: 100%;
+    margin-left: 2em;
+    padding-left: unset;
+    margin-left: unset;
+    margin-top: 0.3em;
+    height: 64px;
+    z-index: 2;
+}
+
+.wrapper img {
+    box-shadow: unset;
+    border-radius: 100%;
+    height: 2em;
+    /* margin-top: 0.25em; */
+    padding-top: 0.25em;
+    margin-bottom: 0.25em;
+    margin-right: 0.25em;
+}
+
+.wrapper h6 {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.125em;
+    transform: translate(0, 25%);
+}
+
+.wrapper:hover {
+    transform: translate(0, -0.1em);
+    box-shadow: var(--box-shadow-lighter);
+}
+
+.wrapper:hover h6{
+    color: var(--green);
+}
+
+</style>
