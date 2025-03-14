@@ -4,6 +4,8 @@ description: 'Here is a sample of some basic Markdown syntax that can be used wh
 pubDate: 'Jun 19 2024'
 updatedDate: 'Mar 13 2024'
 heroImage: '/blog-placeholder-1.jpg'
+tags: 
+- markdown
 authors: 
 - astro
 - sirlilpanda
