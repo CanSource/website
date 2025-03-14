@@ -1,11 +1,11 @@
 {
     "$schema": "../../schemas/author.json",
     "name": "Jordan Hay",
-    "icon": "https://avatars.githubusercontent.com/u/29882279?v=4",
-    "blurb": "this blurb was written by sirlilpanda because i added his profile to the authors",
-    "pronous": "he/him or at least thats what i hear last",
+    "icon": "https://jordanhay.com/img/jordan-profile.jpg",
+    "blurb": "Computer/Electronics Engineer based in Christchurch NZ. Loves to overthink bios amongst other things.",
+    "pronous": "He/Him",
     "extra_titles": [
-        "leadership"
+        "CanSource Leadership"
     ],
     "social_links": [
         {
