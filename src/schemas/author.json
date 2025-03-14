@@ -1,0 +1,55 @@
+{
+    "title" : "author",
+    "discription" : "the data formate required to list yourself as an author in an article",
+    "type" : "object",
+    "properties" : {
+        "name" : {
+            "description": "the name you want to go by",
+            "type" : "string"
+        },
+        "icon" : {
+            "description": "link to an image you want to use as your icon",
+            "type" : "string"
+        },
+        "blurb" : {
+            "description": "A short description of you what your instrest are who you are etc.",
+            "type" : "string"
+        },
+        "pronous" : {
+            "description": "your preferred pronous",
+            "type" : "string"
+        },
+        "extra_titles" : {
+            "description": "an array of any extra titles you may want",
+            "type" : "array",
+            "items" : {
+                "type" : "string"
+            }
+        },
+        "social_links" : {
+            "description": "social links and their associated icons\try to use svgs here and make them both readable on dark mode and light mode colour sechemes",
+            "type" : "array",
+            "items" : {
+                "type" : "object",
+                "properties" : {
+                        "icon" : {
+                            "description": "link to an image you want to use as your icon",
+                            "type" : "string"
+                        },
+                        "link" : {
+                            "description": "link to the given social media account/page",
+                            "type" : "string"
+                        }
+                    },
+                    "required" : [
+                        "icon",
+                        "link"
+                    ]
+                }
+            }
+        },
+    "required" : [
+        "name",
+        "icon"
+    ]
+}
