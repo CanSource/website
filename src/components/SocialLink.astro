@@ -1,0 +1,32 @@
+---
+
+interface Props {
+    icon: string | undefined,
+    link: string | undefined,
+}
+
+const { icon, link } = Astro.props;
+---
+
+
+<div class="">
+    <a href={link}>
+        <img src={icon} alt="">
+    </a>    
+</div>
+
+<style>
+
+
+a:hover > img {
+    transform: translateY(-0.4em);
+}
+
+img {
+    box-shadow: unset;
+    padding: unset;
+    height: 32px;
+}
+
+
+</style>
