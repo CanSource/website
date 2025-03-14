@@ -1,0 +1,20 @@
+{
+    "$schema": "../../schemas/author.json",
+    "name": "Jordan Hay",
+    "icon": "https://avatars.githubusercontent.com/u/29882279?v=4",
+    "blurb": "this blurb was written by sirlilpanda because i added his profile to the authors",
+    "pronous": "he/him or at least thats what i hear last",
+    "extra_titles": [
+        "leadership"
+    ],
+    "social_links": [
+        {
+            "icon": "/github-mark.svg",
+            "link": "https://github.com/JHay0112"
+        },
+        {
+            "icon": "/website.svg",
+            "link": "https://jordanhay.com/"
+        }
+    ]
+}
