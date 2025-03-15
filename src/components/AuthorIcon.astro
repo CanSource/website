@@ -38,7 +38,7 @@ const { icon, name, blurb, social_links, pronous, extra_titles } = Astro.props;
             <p>{blurb}</p>
             <div class="social_links">
                 {social_links?.map((link) => <SocialLink
-                    icon={link.icon}
+                    icon={"/social-link-icons" + link.icon}
                     link={link.link}
                 />
                 ) }
@@ -54,6 +54,7 @@ const { icon, name, blurb, social_links, pronous, extra_titles } = Astro.props;
     flex-direction: row;
     padding-bottom: 0.5em;
     padding-top: unset;
+    gap: 5px;
 }
 
 .arrow-wrapper {
@@ -158,6 +159,7 @@ const { icon, name, blurb, social_links, pronous, extra_titles } = Astro.props;
     margin-left: unset;
     margin-top: 0.3em;
     height: 64px;
+    width: 64px;
     z-index: 2;
 }
 
