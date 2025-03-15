@@ -13,7 +13,7 @@ import FormattedDate from './FormattedDate.astro';
 // Configs fuse.js
 // https://fusejs.io/api/options.html
 const options = {
-	keys: ['data.title', 'data.description', 'slug'],
+	keys: ['data.title', 'data.description', 'data.tags', 'slug'],
 	includeMatches: true,
 	minMatchCharLength: 2,
 	threshold: 0.5,
