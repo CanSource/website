@@ -9,28 +9,32 @@
     ],
     "social_links": [
         {
-            "icon" : "/github-mark.svg",
+            "icon" : "/github.svg",
             "link" : "https://github.com/sirlilpanda"
         },
         {
-            "icon" : "/github-mark.svg",
+            "icon" : "/github.svg",
             "link" : "https://github.com/sirlilpanda"
         },
         {
-            "icon" : "/github-mark.svg",
+            "icon" : "/github.svg",
             "link" : "https://github.com/sirlilpanda"
         },
         {
-            "icon" : "/github-mark.svg",
+            "icon" : "/github.svg",
             "link" : "https://github.com/sirlilpanda"
         },
         {
-            "icon" : "/github-mark.svg",
+            "icon" : "/github.svg",
             "link" : "https://github.com/sirlilpanda"
         },
         {
             "icon" : "/website.svg",
             "link" : "https://sirlilpanda.studio"
+        },
+        {
+            "icon" : "/mail.svg",
+            "link" : "mailto:me@sirlilpanda.studio"
         }
     ]
 }
