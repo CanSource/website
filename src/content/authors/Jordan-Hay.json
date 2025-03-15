@@ -1,0 +1,20 @@
+{
+    "$schema": "../../schemas/author.json",
+    "name": "Jordan Hay",
+    "icon": "https://jordanhay.com/img/jordan-profile.jpg",
+    "blurb": "Computer/Electronics Engineer based in Christchurch NZ. Loves to overthink bios amongst other things.",
+    "pronous": "He/Him",
+    "extra_titles": [
+        "CanSource Leadership"
+    ],
+    "social_links": [
+        {
+            "icon": "/github.svg",
+            "link": "https://github.com/JHay0112"
+        },
+        {
+            "icon": "/website.svg",
+            "link": "https://jordanhay.com/"
+        }
+    ]
+}

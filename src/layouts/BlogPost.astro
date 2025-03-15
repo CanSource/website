@@ -1,13 +1,17 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-
-type Props = CollectionEntry<'blog'>['data'];
+import { getCollection } from 'astro:content';
+import AuthorIcon from '../components/AuthorIcon.astro';
 
 const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.props;
+
+const auths = (await getCollection('authors'));
+const authors_data = auths.filter((a) => {
+	return authors.indexOf(a.id) > -1 
+})
 
 ---
 
@@ -98,8 +102,17 @@ const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.p
 						<h1>{title}</h1>
 						<h6 class="by">
 							{authors.length > 1 ? "Authors:" : "Author:"}
-							{authors.join(", ")}
 						</h6>
+						<div class="authors">
+							{authors_data.map((author) => <AuthorIcon
+								name={author.data.name}
+								icon={author.data.icon}
+								blurb={author.data.blurb}
+								social_links={author.data.social_links}
+								pronous={author.data.pronous}
+								extra_titles={author.data.extra_titles}
+							/>)}
+						</div>
 					</div>
 					<slot />
 				</div>
@@ -120,5 +133,11 @@ const { title, description, pubDate, updatedDate, heroImage, authors } = Astro.p
 	color: var(--text-color);
 }
 
+.authors {
+	display: flex;
+	flex-wrap:wrap;
+	align-items: center;
+	justify-content: center;
+}
 
 </style>
