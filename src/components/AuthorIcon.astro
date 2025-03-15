@@ -38,7 +38,7 @@ const { icon, name, blurb, social_links, pronous, extra_titles } = Astro.props;
             <p>{blurb}</p>
             <div class="social_links">
                 {social_links?.map((link) => <SocialLink
-                    icon={"/social-link-icons" + link.icon}
+                    icon={link.icon?.startsWith("https") ? link.icon : "/social-link-icons" + link.icon}
                     link={link.link}
                 />
                 ) }
