@@ -1,8 +1,13 @@
 # CanSource Website
 
+![Hosting workflow status](https://github.com/CanSource/website/actions/workflows/astro.yml/badge.svg)
+
 This repository contains the source code describing the CanSource website found at 
 https://cansource.org. Changes to the main branch of this repository cause changes to be published
 to the publicly available website.
+
+![Website preview in dark and light modes](./docs/readme_hero_image.png)
+
 
 ## Contributing Articles
 
@@ -44,13 +49,13 @@ The CanSource website repository has the following file structure
 └── tsconfig.json
 ```
 
-The `src/pages/` directory contains `.html` and `.md` files that are included as apart of the 
-website. Each page is exposed publicly based on its file name.
+The `src/pages/` directory contains `.astro` files that are included as apart of the website. Each 
+page is exposed publicly based on its file name.
 
 The `src/components/` supplies any Astro/React/Vue/Svelte/Preact components that may be used 
 throughout the website.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents.
+The `src/content/` directory contains "collections" of related content (e.g. articles and authors).
 
 The `public/` directory contains public content such as images, fonts, and references. It serves as
 a catch-all for content that should be available to website users, but isn't page content that needs
@@ -59,8 +64,8 @@ to be manipulated by the Astro build system.
 
 ### Previewing
 
-Previewing the website on a local machine is done through [npm](https://www.npmjs.com/). A typical
-previewing session would use the following commands
+Previewing the website on a local machine is typically done through [npm](https://www.npmjs.com/). A 
+typical previewing session would use the following commands:
 
 ```bash
 npm install
