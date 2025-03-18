@@ -9,6 +9,11 @@ import rehypeCitation from 'rehype-citation';
 
 import react from '@astrojs/react';
 
+import * as glob from 'glob';
+
+
+const REFERENCES_FILES = glob.glob("public/references/**/*.bib");
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +21,7 @@ export default defineConfig({
     markdown: {
         rehypePlugins: [
             [rehypeCitation, {
-                bibliography: "public/references.bib",
+                bibliography: REFERENCES_FILES,
                 csl: "src/styles/ieee.csl",
                 linkCitations: true
             }]

@@ -2,12 +2,14 @@
 title: 'Markdown Style Guide'
 description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
 pubDate: 'Jun 19 2024'
-updatedDate: 'Dec 3 2024'
+updatedDate: 'Mar 13 2024'
 heroImage: '/blog-placeholder-1.jpg'
+tags: 
+- markdown
 authors: 
 - astro
 - sirlilpanda
-- Jordan Hay
+- Jordan-Hay
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
@@ -195,8 +197,8 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 ## References
 
-References are defined in `public/references.bib` in BibLaTeX format and take on the IEEE format
-when used.
+References are defined in BibLaTeX format and take on the IEEE format when used. Any `.bib` file
+in `public/references` or any of its subdirectories will be included.
 
 ### Syntax
 

@@ -1,31 +1,42 @@
-# Astro Starter Kit: Blog
+# CanSource Website
 
-```sh
-npm create astro@latest -- --template blog
-```
+![Hosting workflow status](https://github.com/CanSource/website/actions/workflows/astro.yml/badge.svg)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+This repository contains the source code describing the CanSource website found at 
+https://cansource.org. Changes to the main branch of this repository cause changes to be published
+to the publicly available website.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Website preview in dark and light modes](./docs/readme_hero_image.png)
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
 
-Features:
+## Contributing Articles
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+Article contributions are welcomed from anyone. A full guide for how to contribute will be given on
+the CanSource website when submissions open. (See [issue #11](https://github.com/CanSource/website/issues/11)
+on the [website issue tracker](https://github.com/CanSource/website/issues) for more information.)
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+## Reporting Issues
+
+Issues with the website may be reported through [the issue tracker](https://github.com/CanSource/website/issues).
+
+
+## Developing
+
+The following sub-sections give important details on developing the CanSource website for potential
+contributors. Note that we make a distinction between developers, who change the structure of the
+website, and authors, who write articles published on the website. This information is primarily
+pertinent to developers.
+
+This website is built on-top of the framework Astro, and follows the conventions and tools laid out
+in [their documentation](https://docs.astro.build).
+
+### Repository Structure
+
+The CanSource website repository has the following file structure
 
 ```text
+├── .github/
 ├── public/
 ├── src/
 │   ├── components/
@@ -38,17 +49,35 @@ Inside of your Astro project, you'll see the following folders and files:
 └── tsconfig.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The `src/pages/` directory contains `.astro` files that are included as apart of the website. Each 
+page is exposed publicly based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The `src/components/` supplies any Astro/React/Vue/Svelte/Preact components that may be used 
+throughout the website.
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+The `src/content/` directory contains "collections" of related content (e.g. articles and authors).
 
-Any static assets, like images, can be placed in the `public/` directory.
+The `public/` directory contains public content such as images, fonts, and references. It serves as
+a catch-all for content that should be available to website users, but isn't page content that needs
+to be manipulated by the Astro build system.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+### Previewing
+
+Previewing the website on a local machine is typically done through [npm](https://www.npmjs.com/). A 
+typical previewing session would use the following commands:
+
+```bash
+npm install
+npm run dev
+```
+
+Where `npm install` updates the npm dependencies on the local machine. These dependencies are
+detailed in `package.json` and `package-lock.json` in the root level of the website repository. 
+`npm run dev` starts a local host of the website at the address `localhost:4321` which may opened
+in a browser of your choice.
+
+A full set of applicable npm commands is given below.
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -59,10 +88,9 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Hosting
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+The CanSource website is hosted through [GitHub pages](https://pages.github.com/) and is 
+automatically updated on changes to `main` with a [GitHub action](https://github.com/features/actions)
+found at [.github/workflows/astro.yml](./.github/workflows/astro.yml).
