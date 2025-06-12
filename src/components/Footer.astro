@@ -5,10 +5,17 @@ const today = new Date();
 ---
 
 <footer>
-	<p>&copy; {today.getFullYear()} {SITE_DESCRIPTION}. All rights reserved.</p>
+	<p>
+		Copyright &copy; {SITE_DESCRIPTION} and listed authors {today.getFullYear()}
+	</p>
 
-	<small>This website acknowledges the use of other open source projects in its development. For
-	a list of acknowledgements, see <a href="/acknowledgements">this page</a>.</small>
+	<small>
+		See <a href="/acknowledgements">the site-wide copyright statement</a> for more information
+		about our copyright policy.
+		<br />
+		This website acknowledges the use of other open source projects in its development. For
+		a list of acknowledgements, see <a href="/acknowledgements">the acknowledgements page</a>.
+	</small>
 </footer>
 <style>
 	footer {

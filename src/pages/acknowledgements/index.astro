@@ -2,6 +2,7 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 ---
 
 <!doctype html>
@@ -15,6 +16,24 @@ import Footer from '../../components/Footer.astro';
 	<body>
 		<Header />
 		<main>
+			<h1>Copyright &copy;</h1>
+			<p>
+				Copyright material on the {SITE_TITLE} is protected by copyright owned by 
+				{SITE_DESCRIPTION} and its authors or licensors. Unless indicated otherwise for 
+				specific items or collections of content (either below or within specific items or 
+				collections), this copyright material is licensed for re-use under the 
+				<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution
+				4.0 International licence</a>. In essence, you are free to copy, distribute and 
+				adapt the material, as long as you attribute it to {SITE_DESCRIPTION} and authors 
+				and abide by the other licence terms. Please note that this licence does not apply 
+				to any logos, emblems and trade marks on the website or to the website's design 
+				elements. Those specific items may not be re-used without express permission.
+			</p>
+			<p>
+				This copyright statement was adapted from the guidance provided 
+				<a href="https://www.digital.govt.nz/standards-and-guidance/governance/copyright-and-licensing/nzgoal-guidance-note-1-website-copyright-statements">digital.govt.nz</a>. 
+			</p>
+
 			<h1>Acknowledgments</h1>
             <p>
                 This website makes use of the IEEE CSL citation description provided by 
