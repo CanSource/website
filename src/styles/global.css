@@ -228,10 +228,11 @@ hr {
 }
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 16px;
+		/* text-align: justify; */
 	}
 	main {
-		padding: 1em;
+		padding: 0.3em;
 	}
 }
 
