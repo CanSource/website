@@ -37,11 +37,11 @@ import GithubIcon from './icons/GithubIcon.astro';
     /* Set the width of the side navigation to 250px */
     function handle_nav() {
         if (opened === true) {
-            document.getElementById("nav").style.width = "0";
+            document.getElementById("nav").classList.remove("active");
             console.log("closed");
             opened = false;
         } else {
-            document.getElementById("nav").style.width = "250px";
+            document.getElementById("nav").classList.add("active");
             document.getElementById("hamburger-menu-button").focus();
             console.log("opened");
             opened = true;
@@ -69,6 +69,10 @@ import GithubIcon from './icons/GithubIcon.astro';
 		padding: 0 1em;
 		background: var(--header-color);
 		box-shadow: 0 2px 8px rgba(var(--text-color), 5%);
+	}
+
+	nav, nav.active {
+		width: auto;
 	}
 
 	.header-icon {
@@ -133,6 +137,10 @@ import GithubIcon from './icons/GithubIcon.astro';
 			padding-top: var(--header-height); 
 			transition: 250ms; 
 			transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+		}
+
+		nav.active {
+			width: 250px;
 		}
 
 		nav HeaderLink::first {
