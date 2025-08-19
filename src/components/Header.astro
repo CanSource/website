@@ -1,28 +1,78 @@
 ---
-import HeaderTopNav from './Header/HeaderTopNav.astro';
-import HeaderSideNav from './Header/HeaderSideNav.astro';
-import HeaderLink from './Header/HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
-import Icon from './icon.astro';
+import HeaderLink from './HeaderLink.astro';
+import SocialLinks from './SocialLinks.astro';
+import SiteIcon from './icons/SiteIcon.astro';
+import HambugerIcon from './icons/HamburgerIcon.astro';
+import GithubIcon from './icons/GithubIcon.astro';
 ---
 
 <header>
-	<nav>
-		<a class="icon-spot" href="/">
-			<Icon height={32} width={110} />
-			<span></span>
+	<a href="/" class="header-icon">
+		<SiteIcon height={32} width={110} />
+	</a>
+
+	<div class="hamburger-menu-button" onclick="handle_nav()" id="hamburger-menu-button">
+		<HambugerIcon height={52} width={52} />
+	</div>
+
+	<nav id="nav">
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/articles">Articles</HeaderLink>
+		<HeaderLink href="/contact">Contact</HeaderLink>
+	</nav>
+
+	<div class="social-links">
+		<a href="https://github.com/CanSource" target="_blank">
+			<GithubIcon height={42} width={42} />
 		</a>
-		<HeaderTopNav />
-		<HeaderSideNav />
-		<!-- this is the thing that will change -->
+	</div>
 </header>
+
+<script is:inline>
+	/* Hamburger button management */
+
+    let opened = false;
+
+    /* Set the width of the side navigation to 250px */
+    function handle_nav() {
+        if (opened === true) {
+            document.getElementById("nav").style.width = "0";
+            console.log("closed");
+            opened = false;
+        } else {
+            document.getElementById("nav").style.width = "250px";
+            document.getElementById("hamburger-menu-button").focus();
+            console.log("opened");
+            opened = true;
+        }
+    }
+</script>
+
 <style>
 
+	:root {
+		--header-height: 60px;
+	}
 
-/* https://github.com/CanSource */
 
-	.icon-spot {
-		max-height: 64px;
+	header {
+		position: fixed;
+		width: 100vw;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		height: var(--header-height);
+		margin: 0;
+		padding: 0 1em;
+		background: var(--header-color);
+		box-shadow: 0 2px 8px rgba(var(--text-color), 5%);
+	}
+
+	.header-icon {
+		max-height: 52px;
 		fill: var(--text-color);
 		color: var(--text-color);
 		display: flex;
@@ -31,29 +81,65 @@ import Icon from './icon.astro';
 		margin-top: 1.5em;
 		margin-bottom: 1.5em;
 	}
-	nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
+	.hamburger-menu-button {
+		display: none;
+	}
+
+	.social-links {
+		max-height: 52px;
+		margin-top: 0.5em;
+		margin-botton: 0.5em;
+	}
+
+    .social-links a {
+        float: right;
+        fill: var(--text-color);
+        transition: 250ms;
     }
 
-    header {
-        margin: 0;
-        padding: 0 1em;
-        background: var(--header-color);
-        box-shadow: 0 2px 8px rgba(var(--text-color), 5%);
+    .social-links a:hover {
+        fill: var(--accent);
     }
+
 
 	@media (max-width: 720px) {
+		/* Mobile styles */
 
-		/* Remove CanSource text from logo on mobile */
-		.icon-spot {
-			width: auto;
+		.hamburger-menu-button {
+			float: right;
+			max-height: 64px;
+			fill: var(--text-color);
+			color: var(--text-color);
+			display: flex;
+			align-items: center;
+			transition: 250ms;
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
+			z-index: 3;
 		}
-		.icon-spot h2 {
-			width: 0;
+
+		nav {
+			height: 100%;
+			width: 0; 
+			top: 0;
+			right: 0;
+			position: fixed; 
+			max-width: 100%;
+			z-index: 2; 
+			background-color: var(--header-color);
+			overflow-x: hidden; 
+			padding-top: var(--header-height); 
+			transition: 250ms; 
+			transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+		}
+
+		nav HeaderLink::first {
+			padding-top: 100px;
+		}
+
+		.social-links {
 			display: none;
 		}
-	}
-	
+	}	
 </style>
