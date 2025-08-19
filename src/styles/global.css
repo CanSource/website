@@ -18,8 +18,8 @@
 	--text-color-light-theme: #101010;
 	--title-color-light-theme: var(--yellow-light-theme);
 	--link-color-light-theme: var(--blue-light-theme);
-	--background-light-theme: #f2f8ff;
-	--header-light-theme: #ffffff;
+	--background-light-theme: #ffffff;
+	--header-light-theme: #f2f8ff;
 	--gray-light-theme: rgb(34, 41, 57);
 
 	--yellow-dark-theme: #f5c300;
