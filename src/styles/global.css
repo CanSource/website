@@ -18,8 +18,8 @@
 	--text-color-light-theme: #101010;
 	--title-color-light-theme: var(--yellow-light-theme);
 	--link-color-light-theme: var(--blue-light-theme);
-	--background-light-theme: #f2f8ff;
-	--header-light-theme: #ffffff;
+	--background-light-theme: #ffffff;
+	--header-light-theme: #f2f8ff;
 	--gray-light-theme: rgb(34, 41, 57);
 
 	--yellow-dark-theme: #f5c300;
@@ -109,6 +109,7 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
+	padding-top: 100px;
 }
 footer {
 	width: 720px;
@@ -239,6 +240,7 @@ hr {
 	}
 	main {
 		padding: 0.3em;
+		padding-top: 100px;
 	}
 	footer {
 		padding: 0.3em;

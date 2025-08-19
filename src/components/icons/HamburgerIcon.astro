@@ -2,10 +2,17 @@
 // code taken from here
 // thank you Author: Mikael Ainalem
 // https://www.sliderrevolution.com/resources/css-hamburger-menu/
+
+interface Props {
+    width: number,
+    height: number,
+}
+
+const { width, height } = Astro.props;
 ---
 
 <!-- thank you Mikael Ainalem for this really cool hamburger menu -->
-<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+<svg class="ham hamRotate ham8" viewBox="0 0 100 100" width={width} height={height} onclick="this.classList.toggle('active')">
     <path
           class="line top"
           d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
