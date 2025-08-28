@@ -47,15 +47,13 @@ function Search({ searchList }) {
           });
     }
 
-    // posts.map((post) => console.log(post))
-
-
     let display_posts = posts.length < 1 ? searchList.map((res) => (res)) : posts;
 
     return (
         <>
+        
             <div class="search-bar">
-                <input class="input-field" id="searchInput" type="text" value={query} onChange={handleOnSearch} placeholder="🔍 Search posts 🔍" />
+                <input class="input-field" id="searchInput" type="text" value={query} onChange={handleOnSearch} placeholder="Type to search..." />
                 <button class="clear-button" id="clearButton" onClick={clearInput}>x</button>
             </div>
             
@@ -64,26 +62,21 @@ function Search({ searchList }) {
                     Found {posts.length} {posts.length === 1 ? 'result' : 'results'} for '{query}'
                 </p>
             )}
-            <ul>
+            <ul class={"post-list"}>
                 {display_posts.map((post) => (
-                        <li>
-                        <a href={`/articles/${post.slug}/`}>
-                            <img width={720} height={360} src={post.data.heroImage} alt="" />
-                            <h4 class={"title"}>{post.data.title}</h4>
-                            <p class={"date"}>
-                            <time datetime={post.data.pubDate}>
-                                {
-                                    post.data.pubDate.toLocaleDateString('en-us', {
-                                        year: 'numeric',
-                                        month: 'short',
-                                        day: 'numeric',
-                                    })
-                                }
-                                </time>
-                            </p>
-                        </a>
-                    </li>
-                    ))}
+                    <li class={"post-item"}><a href={`/articles/${post.slug}/`}>
+                        <img width={720} height={360} src={post.data.heroImage} alt="" />
+                        <h4 class={"title"}>{post.data.title}</h4>
+                        <p class={"date"}><time datetime={post.data.pubDate}>{
+                            post.data.pubDate.toLocaleDateString('en-us', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric',
+                            })
+                        }</time></p>
+                        <p class="abstract">{post.abstract}</p>
+                    </a></li>
+                ))}
             </ul>
         </>
     );

@@ -18,9 +18,10 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style is:inline>
 			main {
-				width: 960px;
+				width: 66vw !important;
 			}
-			ul {
+			
+			.post-list {
 				display: flex;
 				flex-wrap: wrap;
 				gap: 2rem;
@@ -28,55 +29,56 @@ const posts = (await getCollection('blog')).sort(
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
+			.post-item {
 				width: calc(50% - 1rem);
 			}
-			ul li * {
+			.post-item * {
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
-			ul li:first-child {
+			.post-item:first-child {
 				width: 100%;
 				margin-bottom: 1rem;
 				text-align: center;
 			}
-			ul li:first-child img {
-				width: 100%;
+			.post-item:first-child img {
+				width: 80%;
 			}
-			ul li:first-child .title {
+			.post-item:first-child .title {
 				font-size: 2.369rem;
 			}
-			ul li img {
+			.post-item img {
 				margin-bottom: 0.5rem;
 				border-radius: 12px;
 			}
-			ul li a {
+			.post-item a {
 				display: block;
 			}
-			.title {
+
+			.post-item .title {
 				margin: 0;
 				color: hsl(from var(--accent) h s calc(l * 0.5));
 				line-height: 1;
 			}
-			.date {
+			.post-item .date {
 				margin: 0;
 				color: hsl(from var(--blue) h s calc(l * 0.5));
 			}
-			ul li a:hover h4 {
+			.post-item a:hover h4 {
 				/* color: var(--accent); */
 				color: hsl(from var(--accent) h s calc(l * 1.2));
 			}
 			
-			ul li a:hover .date {
+			.post-item a:hover .date {
 				color: hsl(from var(--blue) h s calc(l * 1.2));
 			}
 
-			ul a:hover img {
+			.post-list a:hover img {
 				box-shadow: var(--box-shadow);
 				transform: translate(0, -0.5em);
 			}
 
-			ul a:checked img {
+			.post-list a:checked img {
 				transform: translate(0, +0.5em);
 			}
 
@@ -87,18 +89,15 @@ const posts = (await getCollection('blog')).sort(
 				box-shadow: var(--box-shadow-lighter);
 				box-sizing: border-box;
 				border: none;
-				border-bottom: 2px solid var(--accent);
 				border-radius: 4px;
 				color: var(--text-color);
-				transition: 250ms;
+				transition: 0ms;
 				padding-left: 2em;
 			}
 
 			.input-field:focus {
 				border: 2px solid var(--accent);
 				outline: none;
-				height: 3em;
-				font-size: 1.3em;
 			}
 
 			.input-field::placeholder {
@@ -121,25 +120,21 @@ const posts = (await getCollection('blog')).sort(
 
 			.search-bar {
 				position: relative;
-				padding-bottom: 2em;
-			}
-
-			.search-info {
-
+				padding-bottom: 4em;
 			}
 			
 			@media (max-width: 720px) {
-				ul {
+				.post-list {
 					gap: 0.5em;
 				}
-				ul li {
+				.post-item {
 					width: 100%;
 					text-align: center;
 				}
-				ul li:first-child {
+				.post-item:first-child {
 					margin-bottom: 0;
 				}
-				ul li:first-child .title {
+				.post-item:first-child .title {
 					font-size: 1.563em;
 				}
 			}
@@ -148,9 +143,7 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ArticleSearchBar />
-			</section>
+			<ArticleSearchBar />
 		</main>
 		<Footer />
 	</body>
