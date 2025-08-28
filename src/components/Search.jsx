@@ -74,7 +74,7 @@ function Search({ searchList }) {
                                 day: 'numeric',
                             })
                         }</time></p>
-                        <p class="abstract">{post.abstract}</p>
+                        <p class="description">{post.data.description}</p>
                     </a></li>
                 ))}
             </ul>
